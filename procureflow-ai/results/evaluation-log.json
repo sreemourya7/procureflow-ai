@@ -1,0 +1,499 @@
+{
+  "synthetic": true,
+  "mode": "offline",
+  "live_llm_evaluated": false,
+  "workflow": {
+    "cases": 280,
+    "scenarios": 14,
+    "exact_match_rate": 1,
+    "finding_detection": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positives": 300,
+      "false_positives": 0,
+      "false_negatives": 0
+    },
+    "keyword_routing_baseline": {
+      "exact_match_rate": 0.9285714285714286,
+      "finding_detection": {
+        "precision": 0.875,
+        "recall": 0.9333333333333333,
+        "f1": 0.9032258064516129,
+        "true_positives": 280,
+        "false_positives": 40,
+        "false_negatives": 20
+      }
+    },
+    "document_routing_accuracy": 1.0,
+    "extraction_field_accuracy": 1.0,
+    "extracted_source_span_validity": 1.0,
+    "extracted_facts": 2760,
+    "policy_citation_validity": 1.0,
+    "policy_citations": 300,
+    "latency_ms": {
+      "p50": 7.0585164999101835,
+      "p95": 8.237311549373771,
+      "maximum": 41.18895499959763
+    },
+    "sequential_cases_per_second": 131.1408846162978,
+    "latency_scope": "Single CPU process: validation, SQLite create/checkpoints/events, routing, extraction, retrieval, checks, draft and trace read. No HTTP/LLM/OCR. Five warmups excluded. Throughput wall time includes baseline analysis.",
+    "per_scenario": {
+      "clean": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "missing_insurance": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "expired_insurance": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "low_coverage": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "over_budget": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "identity_mismatch": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "invalid_tax": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "no_encryption": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "long_retention": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "multiple_issues": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "missing_field": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "injection": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "duplicate_type": {
+        "cases": 20,
+        "exact_match_rate": 1
+      },
+      "unknown_attachment": {
+        "cases": 20,
+        "exact_match_rate": 1
+      }
+    }
+  },
+  "retrieval": {
+    "queries": 18,
+    "recall_at_1": 1,
+    "recall_at_3": 1,
+    "mrr_at_3": 1.0
+  },
+  "reliability": {
+    "trials": 60,
+    "successful_recoveries": 60,
+    "recovery_rate": 1.0,
+    "duplicate_drafts": 0,
+    "duplicate_submission_attempts": 100,
+    "distinct_cases": 1,
+    "conflicting_replays_rejected": 10,
+    "conflicting_replays_tested": 10,
+    "lease_expiry": "accelerated in fixture; no wall-clock recovery-time claim",
+    "details": [
+      {
+        "kind": "process_crash",
+        "point": "after:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "process_crash",
+        "point": "after:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:draft_review",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:classify_documents",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:extract_fields",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:retrieve_policy",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:check_compliance",
+        "recovered": true,
+        "drafts": 1
+      },
+      {
+        "kind": "transient_tool_error",
+        "point": "before:draft_review",
+        "recovered": true,
+        "drafts": 1
+      }
+    ]
+  },
+  "split_integrity": {
+    "template_families_disjoint": true
+  },
+  "provenance": {
+    "python": "3.12.14",
+    "pytorch": "2.15.0+cpu",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu": "x86_64",
+    "torch_threads": 2,
+    "model_sha256": "909ddf263ecff469d1b4d3a210755728377d7df3e2adf8d34270f78b096fa4c8",
+    "policy_sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+  },
+  "limitations": [
+    "All documents, rules, and workflow oracles are synthetic.",
+    "Held-out layouts within one generator are development evaluation, not untouched external validation.",
+    "Offline extraction supports labeled text; arbitrary prose, scanned PDFs, and OCR are unsupported.",
+    "Span validity proves source alignment, not semantic correctness.",
+    "Policy retrieval has six clauses; it is not an enterprise-scale retrieval benchmark.",
+    "No measured human labor savings, real vendor outcomes, deployed SLOs, or live LLM quality/cost."
+  ]
+}

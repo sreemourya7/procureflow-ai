@@ -1,0 +1,25 @@
+{
+  "vendor": "Summit Services 999",
+  "documents": [
+    {
+      "id": "doc-1",
+      "name": "attachment-1.txt",
+      "text": "Organization enrollment sheet\nCompany: Summit Services 999\nTIN: 14-9355945\nBusiness address 648 Example Avenue. Authorized representative Reviewer 993."
+    },
+    {
+      "id": "doc-2",
+      "name": "attachment-2.txt",
+      "text": "Tender price envelope\nVendor: Summit Services 999\nTotal price: $150,000\nProposed scope: cloud migration; payment after acceptance."
+    },
+    {
+      "id": "doc-3",
+      "name": "attachment-3.txt",
+      "text": "Evidence of liability protection\nVendor: Summit Services 999\nCoverage limit: $2,000,000\nExpiry date: 2025-12-31\nCoverage supplied by Fictional Mutual."
+    },
+    {
+      "id": "doc-4",
+      "name": "attachment-4.txt",
+      "text": "System security self-assessment\nVendor: Summit Services 999\nEncryption at rest: yes\nRetention days: 90\nControl reviewer: Reviewer 993."
+    }
+  ]
+}

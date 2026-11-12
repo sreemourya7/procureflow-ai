@@ -1,0 +1,593 @@
+{
+  "id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+  "request_key": "final-demo-v1",
+  "payload_hash": "b8f739b31d665b4dc0e40b17edd654fb57df2a08270f7a7de08007d71c66e80a",
+  "submission": {
+    "documents": [
+      {
+        "id": "doc-1",
+        "name": "attachment-1.txt",
+        "text": "Organization enrollment sheet\nCompany: Summit Services 999\nTIN: 14-9355945\nBusiness address 648 Example Avenue. Authorized representative Reviewer 993."
+      },
+      {
+        "id": "doc-2",
+        "name": "attachment-2.txt",
+        "text": "Tender price envelope\nVendor: Summit Services 999\nTotal price: $150,000\nProposed scope: cloud migration; payment after acceptance."
+      },
+      {
+        "id": "doc-3",
+        "name": "attachment-3.txt",
+        "text": "Evidence of liability protection\nVendor: Summit Services 999\nCoverage limit: $2,000,000\nExpiry date: 2025-12-31\nCoverage supplied by Fictional Mutual."
+      },
+      {
+        "id": "doc-4",
+        "name": "attachment-4.txt",
+        "text": "System security self-assessment\nVendor: Summit Services 999\nEncryption at rest: yes\nRetention days: 90\nControl reviewer: Reviewer 993."
+      }
+    ],
+    "vendor": "Summit Services 999"
+  },
+  "state": "awaiting_review",
+  "snapshot": {
+    "classify_documents": [
+      {
+        "document_id": "doc-1",
+        "kind": "vendor_profile",
+        "confidence": 1.0,
+        "abstained": false,
+        "schema_rejected": false
+      },
+      {
+        "document_id": "doc-2",
+        "kind": "commercial_offer",
+        "confidence": 1.0,
+        "abstained": false,
+        "schema_rejected": false
+      },
+      {
+        "document_id": "doc-3",
+        "kind": "insurance_certificate",
+        "confidence": 1.0,
+        "abstained": false,
+        "schema_rejected": false
+      },
+      {
+        "document_id": "doc-4",
+        "kind": "security_attestation",
+        "confidence": 1.0,
+        "abstained": false,
+        "schema_rejected": false
+      }
+    ],
+    "extract_fields": {
+      "doc-1": {
+        "vendor": {
+          "value": "Summit Services 999",
+          "evidence": {
+            "document_id": "doc-1",
+            "start": 39,
+            "end": 58,
+            "quote": "Summit Services 999"
+          }
+        },
+        "tax_id": {
+          "value": "14-9355945",
+          "evidence": {
+            "document_id": "doc-1",
+            "start": 64,
+            "end": 74,
+            "quote": "14-9355945"
+          }
+        }
+      },
+      "doc-2": {
+        "vendor": {
+          "value": "Summit Services 999",
+          "evidence": {
+            "document_id": "doc-2",
+            "start": 30,
+            "end": 49,
+            "quote": "Summit Services 999"
+          }
+        },
+        "price": {
+          "value": "150,000",
+          "evidence": {
+            "document_id": "doc-2",
+            "start": 64,
+            "end": 71,
+            "quote": "150,000"
+          }
+        }
+      },
+      "doc-3": {
+        "vendor": {
+          "value": "Summit Services 999",
+          "evidence": {
+            "document_id": "doc-3",
+            "start": 41,
+            "end": 60,
+            "quote": "Summit Services 999"
+          }
+        },
+        "coverage": {
+          "value": "2,000,000",
+          "evidence": {
+            "document_id": "doc-3",
+            "start": 78,
+            "end": 87,
+            "quote": "2,000,000"
+          }
+        },
+        "expiry": {
+          "value": "2025-12-31",
+          "evidence": {
+            "document_id": "doc-3",
+            "start": 101,
+            "end": 111,
+            "quote": "2025-12-31"
+          }
+        }
+      },
+      "doc-4": {
+        "vendor": {
+          "value": "Summit Services 999",
+          "evidence": {
+            "document_id": "doc-4",
+            "start": 40,
+            "end": 59,
+            "quote": "Summit Services 999"
+          }
+        },
+        "encryption": {
+          "value": "yes",
+          "evidence": {
+            "document_id": "doc-4",
+            "start": 80,
+            "end": 83,
+            "quote": "yes"
+          }
+        },
+        "retention": {
+          "value": "90",
+          "evidence": {
+            "document_id": "doc-4",
+            "start": 100,
+            "end": 102,
+            "quote": "90"
+          }
+        }
+      }
+    },
+    "retrieve_policy": {
+      "P1": [
+        {
+          "id": "P1",
+          "title": "Consistent supplier identity",
+          "text": "The legal vendor name on the company profile, commercial offer, insurance certificate, and security attestation must match. A conflicting supplier identity requires clarification.",
+          "score": 0.4811612903244368,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P2",
+          "title": "Tax registration",
+          "text": "The supplier company profile must provide a tax registration identifier in the format NN-NNNNNNN. Missing or malformed tax registration requires clarification.",
+          "score": 0.09619920160967496,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P5",
+          "title": "Required submission documents",
+          "text": "Every submission must include one company profile, one commercial offer, one insurance certificate, and one security attestation. Missing documents, duplicate document types, unsupported files, or unverifiable fields require manual clarification.",
+          "score": 0.036136975543388655,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        }
+      ],
+      "P2": [
+        {
+          "id": "P2",
+          "title": "Tax registration",
+          "text": "The supplier company profile must provide a tax registration identifier in the format NN-NNNNNNN. Missing or malformed tax registration requires clarification.",
+          "score": 0.6622946331851728,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P1",
+          "title": "Consistent supplier identity",
+          "text": "The legal vendor name on the company profile, commercial offer, insurance certificate, and security attestation must match. A conflicting supplier identity requires clarification.",
+          "score": 0.0,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P3",
+          "title": "Insurance evidence",
+          "text": "Liability insurance coverage must be at least USD 1,000,000 and the certificate must not expire before the review date. Expired coverage or an insufficient liability limit requires clarification.",
+          "score": 0.0,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        }
+      ],
+      "P3": [
+        {
+          "id": "P3",
+          "title": "Insurance evidence",
+          "text": "Liability insurance coverage must be at least USD 1,000,000 and the certificate must not expire before the review date. Expired coverage or an insufficient liability limit requires clarification.",
+          "score": 0.5927328991473113,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P1",
+          "title": "Consistent supplier identity",
+          "text": "The legal vendor name on the company profile, commercial offer, insurance certificate, and security attestation must match. A conflicting supplier identity requires clarification.",
+          "score": 0.03038479967091441,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P5",
+          "title": "Required submission documents",
+          "text": "Every submission must include one company profile, one commercial offer, one insurance certificate, and one security attestation. Missing documents, duplicate document types, unsupported files, or unverifiable fields require manual clarification.",
+          "score": 0.02528633671287378,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        }
+      ],
+      "P4": [
+        {
+          "id": "P4",
+          "title": "Commercial budget",
+          "text": "The total quoted price of the commercial offer must not exceed USD 100,000. An offer above the budget requires clarification.",
+          "score": 0.6507191098989548,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P1",
+          "title": "Consistent supplier identity",
+          "text": "The legal vendor name on the company profile, commercial offer, insurance certificate, and security attestation must match. A conflicting supplier identity requires clarification.",
+          "score": 0.03038479967091441,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P5",
+          "title": "Required submission documents",
+          "text": "Every submission must include one company profile, one commercial offer, one insurance certificate, and one security attestation. Missing documents, duplicate document types, unsupported files, or unverifiable fields require manual clarification.",
+          "score": 0.02528633671287378,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        }
+      ],
+      "P5": [
+        {
+          "id": "P5",
+          "title": "Required submission documents",
+          "text": "Every submission must include one company profile, one commercial offer, one insurance certificate, and one security attestation. Missing documents, duplicate document types, unsupported files, or unverifiable fields require manual clarification.",
+          "score": 0.5421592506377464,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P6",
+          "title": "Data handling controls",
+          "text": "The security attestation must confirm encryption at rest and data retention of no more than 30 days. Missing encryption or longer retention requires clarification.",
+          "score": 0.02700159368895108,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P2",
+          "title": "Tax registration",
+          "text": "The supplier company profile must provide a tax registration identifier in the format NN-NNNNNNN. Missing or malformed tax registration requires clarification.",
+          "score": 0.02649444328594643,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        }
+      ],
+      "P6": [
+        {
+          "id": "P6",
+          "title": "Data handling controls",
+          "text": "The security attestation must confirm encryption at rest and data retention of no more than 30 days. Missing encryption or longer retention requires clarification.",
+          "score": 0.6289343385026328,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P1",
+          "title": "Consistent supplier identity",
+          "text": "The legal vendor name on the company profile, commercial offer, insurance certificate, and security attestation must match. A conflicting supplier identity requires clarification.",
+          "score": 0.03038479967091441,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        },
+        {
+          "id": "P5",
+          "title": "Required submission documents",
+          "text": "Every submission must include one company profile, one commercial offer, one insurance certificate, and one security attestation. Missing documents, duplicate document types, unsupported files, or unverifiable fields require manual clarification.",
+          "score": 0.02528633671287378,
+          "policy_id": "DEMO-PROC-2026-01",
+          "policy_version": "1.0",
+          "sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47"
+        }
+      ]
+    },
+    "check_compliance": [
+      {
+        "code": "OVER_BUDGET",
+        "severity": "blocker",
+        "message": "Quoted total exceeds the procurement budget.",
+        "policy_id": "DEMO-PROC-2026-01",
+        "policy_version": "1.0",
+        "clause_id": "P4",
+        "policy_quote": "The total quoted price of the commercial offer must not exceed USD 100,000. An offer above the budget requires clarification.",
+        "evidence": [
+          {
+            "document_id": "doc-2",
+            "start": 64,
+            "end": 71,
+            "quote": "150,000"
+          }
+        ]
+      },
+      {
+        "code": "EXPIRED_INSURANCE",
+        "severity": "blocker",
+        "message": "Insurance expired before the review date.",
+        "policy_id": "DEMO-PROC-2026-01",
+        "policy_version": "1.0",
+        "clause_id": "P3",
+        "policy_quote": "Liability insurance coverage must be at least USD 1,000,000 and the certificate must not expire before the review date. Expired coverage or an insufficient liability limit requires clarification.",
+        "evidence": [
+          {
+            "document_id": "doc-3",
+            "start": 101,
+            "end": 111,
+            "quote": "2025-12-31"
+          }
+        ]
+      },
+      {
+        "code": "RETENTION_EXCEEDED",
+        "severity": "blocker",
+        "message": "Retention exceeds the allowed period.",
+        "policy_id": "DEMO-PROC-2026-01",
+        "policy_version": "1.0",
+        "clause_id": "P6",
+        "policy_quote": "The security attestation must confirm encryption at rest and data retention of no more than 30 days. Missing encryption or longer retention requires clarification.",
+        "evidence": [
+          {
+            "document_id": "doc-4",
+            "start": 100,
+            "end": 102,
+            "quote": "90"
+          }
+        ]
+      }
+    ],
+    "draft_review": {
+      "recommendation": "request_clarification",
+      "finding_count": 3,
+      "draft": {
+        "id": "0beb581f2ca4097be27bf5f4",
+        "kind": "clarification",
+        "status": "draft"
+      },
+      "policy_id": "DEMO-PROC-2026-01",
+      "policy_sha256": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47",
+      "execution_mode": "offline"
+    }
+  },
+  "mode": "offline",
+  "policy_hash": "8c615cdadf78bbc57ea36a9bb983266c1fda9d49bf41b35c6d701e960d6c6a47",
+  "revision": 5,
+  "lease_until": 0.0,
+  "fence": 1,
+  "created": 1794448680.2368538,
+  "updated": 1794448680.2633584,
+  "error": null,
+  "events": [
+    {
+      "seq": 12,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.2375958,
+      "agent": "intake",
+      "tool": "create_case",
+      "status": "completed",
+      "detail": {
+        "request_key": "final-demo-v1"
+      },
+      "duration_ms": 0.0
+    },
+    {
+      "seq": 13,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.242504,
+      "agent": "coordinator",
+      "tool": "classify_documents",
+      "status": "selected",
+      "detail": {
+        "mode": "offline",
+        "ready": [
+          "classify_documents",
+          "retrieve_policy"
+        ]
+      },
+      "duration_ms": 0.0
+    },
+    {
+      "seq": 14,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.246488,
+      "agent": "intake_agent",
+      "tool": "classify_documents",
+      "status": "completed",
+      "detail": {
+        "checkpoint": "classify_documents"
+      },
+      "duration_ms": 2.5571509995643282
+    },
+    {
+      "seq": 15,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.2478504,
+      "agent": "coordinator",
+      "tool": "extract_fields",
+      "status": "selected",
+      "detail": {
+        "mode": "offline",
+        "ready": [
+          "extract_fields",
+          "retrieve_policy"
+        ]
+      },
+      "duration_ms": 0.0
+    },
+    {
+      "seq": 16,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.249393,
+      "agent": "evidence_agent",
+      "tool": "extract_fields",
+      "status": "completed",
+      "detail": {
+        "checkpoint": "extract_fields"
+      },
+      "duration_ms": 0.18257000010635238
+    },
+    {
+      "seq": 17,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.250726,
+      "agent": "coordinator",
+      "tool": "retrieve_policy",
+      "status": "selected",
+      "detail": {
+        "mode": "offline",
+        "ready": [
+          "retrieve_policy"
+        ]
+      },
+      "duration_ms": 0.0
+    },
+    {
+      "seq": 18,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.254691,
+      "agent": "policy_agent",
+      "tool": "retrieve_policy",
+      "status": "completed",
+      "detail": {
+        "checkpoint": "retrieve_policy"
+      },
+      "duration_ms": 2.4596969997219276
+    },
+    {
+      "seq": 19,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.2571323,
+      "agent": "coordinator",
+      "tool": "check_compliance",
+      "status": "selected",
+      "detail": {
+        "mode": "offline",
+        "ready": [
+          "check_compliance"
+        ]
+      },
+      "duration_ms": 0.0
+    },
+    {
+      "seq": 20,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.2591307,
+      "agent": "compliance_agent",
+      "tool": "check_compliance",
+      "status": "completed",
+      "detail": {
+        "checkpoint": "check_compliance"
+      },
+      "duration_ms": 0.3999109994765604
+    },
+    {
+      "seq": 21,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.2608519,
+      "agent": "coordinator",
+      "tool": "draft_review",
+      "status": "selected",
+      "detail": {
+        "mode": "offline",
+        "ready": [
+          "draft_review"
+        ]
+      },
+      "duration_ms": 0.0
+    },
+    {
+      "seq": 22,
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "at": 1794448680.2633758,
+      "agent": "review_agent",
+      "tool": "draft_review",
+      "status": "completed",
+      "detail": {
+        "checkpoint": "draft_review"
+      },
+      "duration_ms": 1.2910490004287567
+    }
+  ],
+  "outbox": [
+    {
+      "id": "0beb581f2ca4097be27bf5f4",
+      "case_id": "c0dfe21f-a9bf-4402-821f-e010eeeacd09",
+      "kind": "clarification",
+      "payload": {
+        "vendor": "Summit Services 999",
+        "subject": "Clarification requested for procurement submission",
+        "items": [
+          {
+            "code": "OVER_BUDGET",
+            "request": "Quoted total exceeds the procurement budget.",
+            "policy_clause": "P4"
+          },
+          {
+            "code": "EXPIRED_INSURANCE",
+            "request": "Insurance expired before the review date.",
+            "policy_clause": "P3"
+          },
+          {
+            "code": "RETENTION_EXCEEDED",
+            "request": "Retention exceeds the allowed period.",
+            "policy_clause": "P6"
+          }
+        ],
+        "delivery": "local draft only; no email connector configured"
+      },
+      "status": "draft"
+    }
+  ]
+}

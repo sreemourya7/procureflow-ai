@@ -1,0 +1,15 @@
+{
+  "labels": [
+    "vendor_profile",
+    "commercial_offer",
+    "insurance_certificate",
+    "security_attestation",
+    "other"
+  ],
+  "architecture": "EmbeddingBag(8192,64) \u2192 Linear(64,64) \u2192 ReLU \u2192 Dropout(.15) \u2192 Linear(64,5)",
+  "parameters": 528773,
+  "selected_seed": 19,
+  "selection": "minimum validation loss",
+  "temperature": 0.5,
+  "abstention_threshold": 0.55
+}

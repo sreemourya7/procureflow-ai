@@ -1,0 +1,10 @@
+# Direct dependencies observed during the bundled CPU run. Not a transitive lock.
+# Install torch from https://download.pytorch.org/whl/cpu on Linux/Windows first.
+torch==2.15.0
+numpy==2.3.5
+scikit-learn==1.8.0
+fastapi==0.141.1
+uvicorn==0.52.1
+httpx==0.28.1
+pydantic==2.13.4
+pytest==9.2.0

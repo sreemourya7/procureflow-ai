@@ -1,0 +1,14 @@
+{
+  "id": "DEMO-PROC-2026-01", "version": "1.0", "synthetic": true,
+  "title": "Fictional Civic Services Procurement Policy",
+  "review_date": "2026-11-01", "budget_usd": 100000, "minimum_insurance_usd": 1000000,
+  "maximum_retention_days": 30,
+  "clauses": [
+    {"id":"P1", "title":"Consistent supplier identity", "text":"The legal vendor name on the company profile, commercial offer, insurance certificate, and security attestation must match. A conflicting supplier identity requires clarification."},
+    {"id":"P2", "title":"Tax registration", "text":"The supplier company profile must provide a tax registration identifier in the format NN-NNNNNNN. Missing or malformed tax registration requires clarification."},
+    {"id":"P3", "title":"Insurance evidence", "text":"Liability insurance coverage must be at least USD 1,000,000 and the certificate must not expire before the review date. Expired coverage or an insufficient liability limit requires clarification."},
+    {"id":"P4", "title":"Commercial budget", "text":"The total quoted price of the commercial offer must not exceed USD 100,000. An offer above the budget requires clarification."},
+    {"id":"P5", "title":"Required submission documents", "text":"Every submission must include one company profile, one commercial offer, one insurance certificate, and one security attestation. Missing documents, duplicate document types, unsupported files, or unverifiable fields require manual clarification."},
+    {"id":"P6", "title":"Data handling controls", "text":"The security attestation must confirm encryption at rest and data retention of no more than 30 days. Missing encryption or longer retention requires clarification."}
+  ]
+}

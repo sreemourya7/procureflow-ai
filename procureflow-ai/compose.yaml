@@ -1,0 +1,18 @@
+services:
+  procureflow:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - procureflow-runtime:/app/runtime
+    environment:
+      PROCUREFLOW_MODE: ${PROCUREFLOW_MODE:-offline}
+      PROCUREFLOW_API_TOKEN: ${PROCUREFLOW_API_TOKEN:-}
+      PROCUREFLOW_REVIEWER_TOKEN: ${PROCUREFLOW_REVIEWER_TOKEN:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_INPUT_USD_PER_MILLION: ${LLM_INPUT_USD_PER_MILLION:-}
+      LLM_OUTPUT_USD_PER_MILLION: ${LLM_OUTPUT_USD_PER_MILLION:-}
+volumes:
+  procureflow-runtime:

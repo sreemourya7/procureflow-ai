@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "seed": 41,
+  "template_families": {
+    "train": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "validation": [
+      4
+    ],
+    "test": [
+      5,
+      6
+    ]
+  },
+  "classifier_sizes": {
+    "train": 1200,
+    "validation": 300,
+    "test": 500
+  },
+  "workflow_cases": 280,
+  "oracle": "scenario labels authored independently of compliance engine",
+  "warning": "Template holdout measures this generator only, not real procurement generalization."
+}

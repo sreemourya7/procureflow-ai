@@ -1,0 +1,18 @@
+{"query": "The business names differ between the attachments", "expected": "P1", "returned": ["P1", "P2", "P3"], "reciprocal_rank": 1.0}
+{"query": "Supplier identity must match the legal company", "expected": "P1", "returned": ["P1", "P2", "P5"], "reciprocal_rank": 1.0}
+{"query": "Conflicting vendor identity across files", "expected": "P1", "returned": ["P1", "P5", "P3"], "reciprocal_rank": 1.0}
+{"query": "What format must a tax registration identifier use?", "expected": "P2", "returned": ["P2", "P1", "P3"], "reciprocal_rank": 1.0}
+{"query": "Missing tax number needs clarification", "expected": "P2", "returned": ["P2", "P6", "P5"], "reciprocal_rank": 1.0}
+{"query": "Is NN-NNNNNNN a required registration format?", "expected": "P2", "returned": ["P2", "P5", "P3"], "reciprocal_rank": 1.0}
+{"query": "Certificate has expired before review", "expected": "P3", "returned": ["P3", "P1", "P5"], "reciprocal_rank": 1.0}
+{"query": "Minimum liability coverage in dollars", "expected": "P3", "returned": ["P3", "P1", "P2"], "reciprocal_rank": 1.0}
+{"query": "The insurance limit is too low", "expected": "P3", "returned": ["P3", "P1", "P5"], "reciprocal_rank": 1.0}
+{"query": "Total offer exceeds our allocated budget", "expected": "P4", "returned": ["P4", "P1", "P5"], "reciprocal_rank": 1.0}
+{"query": "Maximum commercial quoted price", "expected": "P4", "returned": ["P4", "P1", "P5"], "reciprocal_rank": 1.0}
+{"query": "What is the spending ceiling for the commercial offer?", "expected": "P4", "returned": ["P4", "P1", "P5"], "reciprocal_rank": 1.0}
+{"query": "One of the mandatory files is missing", "expected": "P5", "returned": ["P5", "P6", "P2"], "reciprocal_rank": 1.0}
+{"query": "Duplicate documents and unsupported attachments", "expected": "P5", "returned": ["P5", "P1", "P3"], "reciprocal_rank": 1.0}
+{"query": "Unable to verify a required field", "expected": "P5", "returned": ["P5", "P1", "P3"], "reciprocal_rank": 1.0}
+{"query": "Must stored data be encrypted?", "expected": "P6", "returned": ["P6", "P1", "P3"], "reciprocal_rank": 1.0}
+{"query": "Maximum retention period for data", "expected": "P6", "returned": ["P6", "P1", "P3"], "reciprocal_rank": 1.0}
+{"query": "The security response stores records for 90 days", "expected": "P6", "returned": ["P6", "P1", "P5"], "reciprocal_rank": 1.0}

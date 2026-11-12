@@ -1,0 +1,241 @@
+{
+  "synthetic": true,
+  "split": "disjoint template families; not real-world validation",
+  "samples": {
+    "train": 1200,
+    "validation": 300,
+    "test": 500
+  },
+  "labels": [
+    "vendor_profile",
+    "commercial_offer",
+    "insurance_certificate",
+    "security_attestation",
+    "other"
+  ],
+  "pytorch_runs": [
+    {
+      "seed": 7,
+      "epochs": 28,
+      "selected_validation_loss": 0.5109000205993652,
+      "temperature": 1.0,
+      "train_seconds": 2.3524859600001946,
+      "accuracy": 0.792,
+      "macro_f1": 0.7260236761658564,
+      "confusion_matrix": [
+        [
+          100,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          92,
+          5,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          100,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          100,
+          0
+        ],
+        [
+          0,
+          72,
+          6,
+          18,
+          4
+        ]
+      ]
+    },
+    {
+      "seed": 19,
+      "epochs": 28,
+      "selected_validation_loss": 0.1340455561876297,
+      "temperature": 0.5,
+      "train_seconds": 2.112940907000848,
+      "accuracy": 0.988,
+      "macro_f1": 0.9879413593335811,
+      "confusion_matrix": [
+        [
+          100,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          100,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          100,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          100,
+          0
+        ],
+        [
+          0,
+          5,
+          0,
+          1,
+          94
+        ]
+      ]
+    },
+    {
+      "seed": 41,
+      "epochs": 28,
+      "selected_validation_loss": 0.03246881067752838,
+      "temperature": 0.5,
+      "train_seconds": 1.6885423520006952,
+      "accuracy": 0.822,
+      "macro_f1": 0.7668503191538422,
+      "confusion_matrix": [
+        [
+          100,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          100,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          100,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          100,
+          0
+        ],
+        [
+          0,
+          43,
+          0,
+          46,
+          11
+        ]
+      ]
+    }
+  ],
+  "pytorch_mean_macro_f1": 0.8269384515510932,
+  "pytorch_std_macro_f1": 0.11505985668404461,
+  "keyword_baseline": {
+    "accuracy": 0.782,
+    "macro_f1": 0.7781568572272022,
+    "confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        47,
+        53,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        62,
+        0,
+        0,
+        0,
+        38
+      ]
+    ]
+  },
+  "tfidf_logistic_baseline": {
+    "accuracy": 0.938,
+    "macro_f1": 0.9364737826276288,
+    "confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        31,
+        0,
+        0,
+        69
+      ]
+    ]
+  },
+  "checkpoint_selection": "minimum validation loss; test set not used for selection"
+}
